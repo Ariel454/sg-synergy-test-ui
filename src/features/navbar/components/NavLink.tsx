@@ -15,8 +15,8 @@ export default function NavLink({ href, label, isActive, onClick }: NavLinkProps
       className={clsx(
         'text-xs tracking-widest uppercase transition-colors duration-300',
         isActive
-          ? 'text-amber-300 border-b border-amber-300'
-          : 'text-stone-300 hover:text-white',
+          ? 'text-indigo-400 border-b border-indigo-400'
+          : 'text-neutral-300 hover:text-white',
       )}
     >
       {label}

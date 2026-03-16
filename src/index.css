@@ -10,8 +10,9 @@ html {
 
 body {
   margin: 0;
-  background-color: #0c0a08;
-  color: #f5f0eb;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #080810;
+  color: #f8fafc;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

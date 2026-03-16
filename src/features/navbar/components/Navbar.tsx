@@ -19,13 +19,12 @@ export default function Navbar() {
     <nav
       role="navigation"
       aria-label="Navegación principal"
-      className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-stone-800"
+      className="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800"
     >
       <div className="flex items-center justify-between px-6 md:px-12 lg:px-20 h-16">
         <a
           href="#inicio"
           className="text-white tracking-widest text-sm"
-          style={{ fontFamily: "'Playfair Display', serif" }}
         >
           LUXE PARFUMS
         </a>

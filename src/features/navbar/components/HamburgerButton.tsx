@@ -15,19 +15,19 @@ export default function HamburgerButton({ isOpen, onToggle }: HamburgerButtonPro
     >
       <span
         className={clsx(
-          'block w-6 h-px bg-stone-300 transition-all duration-300',
+          'block w-6 h-px bg-neutral-300 transition-all duration-300',
           isOpen && 'rotate-45 translate-y-2',
         )}
       />
       <span
         className={clsx(
-          'block w-6 h-px bg-stone-300 transition-all duration-300',
+          'block w-6 h-px bg-neutral-300 transition-all duration-300',
           isOpen && 'opacity-0',
         )}
       />
       <span
         className={clsx(
-          'block w-6 h-px bg-stone-300 transition-all duration-300',
+          'block w-6 h-px bg-neutral-300 transition-all duration-300',
           isOpen && '-rotate-45 -translate-y-2',
         )}
       />
