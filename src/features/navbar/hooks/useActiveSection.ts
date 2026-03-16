@@ -1,29 +1,35 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export function useActiveSection(ids: string[]): string {
-  const [activeId, setActiveId] = useState(ids[0])
+export function useActiveSection(): string {
+  const [activeSection, setActiveSection] = useState('inicio')
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = []
+    const sectionIds = ['inicio', 'coleccion', 'contacto']
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null)
 
-    ids.forEach((id) => {
-      const el = document.getElementById(id)
-      if (!el) return
+    if (elements.length === 0) return
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveId(id)
-        },
-        { rootMargin: '-40% 0px -55% 0px' },
-      )
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        }
+      },
+      { rootMargin: '-50% 0px -50% 0px' },
+    )
 
+    for (const el of elements) {
       observer.observe(el)
-      observers.push(observer)
-    })
+    }
 
-    return () => observers.forEach((o) => o.disconnect())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => {
+      observer.disconnect()
+    }
   }, [])
 
-  return activeId
+  return activeSection
 }
